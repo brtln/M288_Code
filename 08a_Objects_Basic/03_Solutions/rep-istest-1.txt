@@ -1,0 +1,83 @@
+Erstellen Sie Objekt-Literal person mit folgenden Eigenschaften:
+Vorname/Nachname: "Ruedi Meier",
+Geburtstag: 12.01.1975,
+Geschlecht: männlich
+
+Wählen Sie dafür die korrekte Lösung aus.
+
+
+let person = #{/[#
+    Vorname: #"Ruedi"/Ruedi#,
+    Nachname: #"Meier"/Meier#,
+    Geschlecht: #"männlich"/männlich#,
+    Geburtstag: #new Date("1975-01-12")/new Date(12.1.1975)|Date("1975-01-12")#
+#}/]#
+
+---------------------------------------
+Sie Objekt-Literal "person2" mit den Eigenschaften:
+Vorname, Nachname, Geburtstag und Geschlecht.
+
+Geben Sie den Wert der Eigenschaft Vorname auf der Konsole aus.
+Wählen Sie dafür die korrekte Lösung aus.
+
+console.log(#person2.Vorname/"person2.Vorname"|Person2.vorname#);
+---------------------------------------
+Sie Objekt-Literal "sportwagen1" mit den Eigenschaften:
+Marke "Porsche", Preis "CHF 50000", Zustand "Neu"
+
+Im Programm möchten Sie eine Kopie des Objekts "sportwagen1" erstellen
+um einen weiteren Sportwagen zu erfassen. Abgesehen vom Zustand ist alles
+gleich:
+
+let sportwagen2 = sportwagen1;
+sportwagen2.Zustand = "Occasion";
+console.log("Zustand Sportwagen 1: ", sportwagen1.Zustand);
+console.log("Zustand Sportwagen 2: ", sportwagen2.Zustand);
+
+Was wird auf der Konsole ausgegeben?
+Wählen Sie dafür die korrekte Lösung aus.
+
+Zustand Sportwagen 1: #Occasion/Neu|<keine Ausgabe>#
+Zustand Sportwagen 2: #Occasion/Neu|<keine Ausgabe>#
+
+---------------------------------------
+Sie Objekt-Literal "person3" mit den Eigenschaften:
+Vorname: Ruedi, Nachname: Meier, Geburtstag: 12.01.1975,
+Geschlecht: männlich
+
+Erweitern Sie das Objekt-Literal mit der Methode "getFullName"
+welche folgenden String ausgibt: "Ich heisse Ruedi Meier."
+Wählen Sie dafür die korrekte Lösung aus.
+
+
+let person = #{/[#
+    ...
+    #getFullName()/function getFullName()#{
+        return `Ich heisse #${this.Vorname} ${this.Nachname}/${person3.Vorname} ${person3.Nachname}#.`;
+    }
+#}/]#
+
+
+---------------------------------------
+Sie haben eine JavaScript-Klasse Sportwagen.
+Erstellen Sie eine Liste von zwei Sportwagen mit folgenden Eigenschaften:
+Marke "Porsche", Preis "CHF 50000", Zustand "Neu"
+Marke "BMW", Preis "CHF 60000", Zustand "Occasion"
+
+Wählen Sie dafür die korrekte Lösung aus.
+
+//Leere liste initialisieren
+let sportwagenListe = #[]/empty#;
+//Objekte erstellen
+sportwagenListe.#push/new|pop#(#new Sportwagen/sportwagen#("Porsche","CHF 50000","Neu"));
+sportwagenListe.#push/new|pop#(#new Sportwagen/sportwagen#("BMW","CHF 60000","Occasion");
+
+---------------------------------------
+Sie haben 100 Objekte mit der JavaScript-Klasse "Sportwagen" erstellt.
+Die Klasse Sportwagen verfügt über folgenden Eigenschaften:
+Marke, Preis, Zustand
+
+Geben Sie alle Sportwagen unter CHF 55000 aus der Liste "sportwagenListe" aus.
+Wählen Sie dafür die korrekte Lösung aus.
+
+console.log(sportwagenListe.#filter/get#((wagen) => wagen.Preis < 55000));
